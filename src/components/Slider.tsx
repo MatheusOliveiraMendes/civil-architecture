@@ -12,14 +12,14 @@ function Slider() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 15000); // Troca de slide a cada 3 segundos
+    }, 15000); 
 
-    return () => clearInterval(interval); // Limpa o intervalo ao desmontar o componente
+    return () => clearInterval(interval); 
   }, []);
 
   return (
     <div className="relative w-screen h-screen flex justify-end items-start">
-      <div className="relative w-[75vw] h-[90vh]">
+      <div className="relative w-[70vw] h-[100vh]">
         <img
           src={images[index]}
           alt={`Slide ${index + 1}`}
