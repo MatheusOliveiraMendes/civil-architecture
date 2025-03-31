@@ -48,7 +48,7 @@ function Services() {
           </div>
         </div>
 
-        <div className=" grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-2">
+        <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-2">
           {[
             { icon: <FaHammer size={40} />, title: "Serviços de Construção", text: "Nossos clientes adoram o ritmo/tempo de qualidade que mostramos durante cada um dos principais processos de construção! Estamos confortáveis com qualquer ideia de nossos clientes." },
             { icon: <FaBuilding size={40} />, title: "Gestão de Construção", text: "Nosso gerenciamento de projetos é essencial. Estamos usando os métodos de ciclos de vida mais eficientes em tempo e iterações para concluir todos os projetos a tempo." },
