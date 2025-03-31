@@ -3,46 +3,52 @@ function Projects() {
     {
       id: 1,
       title: "Residência Moderna",
-      description: "Projeto de uma residência moderna com design minimalista.",
+      description: "Projeto design minimalista.",
       image: "/images/project1.jpg",
     },
     {
       id: 2,
       title: "Edifício Comercial",
-      description: "Edifício comercial com foco em sustentabilidade.",
+      description: "Edifício comercial sustentavel.",
       image: "/images/project2.jpg",
     },
     {
       id: 3,
       title: "Praça Pública",
-      description: "Projeto de revitalização de uma praça pública.",
+      description: "Projeto de revitalização.",
       image: "/images/project3.jpg",
+    },
+    {
+      id: 4,
+      title: "Casa de Campo",
+      description: "Projeto de uma casa.",
+      image: "/images/project4.jpg",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 p-16">
-      <h2 className="text-center text-4xl font-bold m-8">Projetos</h2>
-      <p className="text-center text-lg text-gray-600 mb-12">
-        Confira alguns dos nossos projetos mais recentes, que combinam inovação, funcionalidade e estética.
-      </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="min-h-screen py-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         {projects.map((project) => (
-          <div
-            key={project.id}
-            className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
-          >
+          <div key={project.id} className="relative h-[600px] overflow-hidden group">
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-48 object-cover"
+              className="w-full h-full object-cover brightness-50 transition-all duration-300 group-hover:brightness-75"
             />
-            <div className="p-4">
-              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-              <p className="text-gray-600">{project.description}</p>
-            </div>
+           <div className="absolute inset-0 flex flex-col justify-between text-center text-white px-4 py-8">
+                <h3 className="text-xl font-bold">{project.title}</h3>
+              </div>
+              <p className="absolute bottom-28 rotate-270 text-white text-sm font-semibold">
+                {project.description}
+              </p>              
           </div>
         ))}
+      </div>
+      <div className="flex justify-center mt-8">
+        <button className="px-6 py-3 border-2 border-orange-300 text-orange-300 font-semibold rounded-full hover:bg-orange-300 hover:text-white transition">
+          Veja todos projetos
+        </button>
       </div>
     </div>
   );
