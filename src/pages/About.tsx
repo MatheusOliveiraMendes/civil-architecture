@@ -1,7 +1,51 @@
+import { useState, useEffect, useRef } from "react";
+
 function About() {
+  const [years, setYears] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const numberRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.5 } // Executa quando 50% do elemento está visível
+    );
+
+    const currentRef = numberRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isVisible) {
+      let currentYear = 0;
+      const interval = setInterval(() => {
+        if (currentYear < 15) {
+          currentYear += 1;
+          setYears(currentYear);
+        } else {
+          clearInterval(interval);
+        }
+      }, 100); 
+
+      return () => clearInterval(interval);
+    }
+  }, [isVisible]);
+
   return (
     <div className="min-h-screen flex">
-      {/* Seção 60% com fundo cinza claro e texto */}
+    
       <div className="w-3/5 bg-gray-100 flex items-center justify-center p-10">
         <div className="max-w-2xl text-left">
           <h2 className="text-4xl text-orange-300 mb-6">SOBRE NÓS</h2>
@@ -20,22 +64,20 @@ function About() {
         </div>
       </div>
 
-      {/* Seção 40% com espaço para conteúdo adicional ou imagem */}
       <div className="w-2/5 bg-white flex items-center justify-center">
         <div className="relative flex flex-col items-center">
-          {/* Número 15 com imagem de fundo */}
           <div
+            ref={numberRef}
             className="text-[10rem] font-bold text-transparent flex items-center justify-center bg-clip-text bg-cover bg-center"
             style={{
               backgroundImage: "url('/images/slide3.jpg')",
             }}
           >
-            15
+            {years}
           </div>
-          {/* Texto abaixo do número */}
           <p className="text-xl font-semibold text-gray-700 mt-4 text-center">
-          <h2 className="text-4xl text-orange-300 mb-6">ANOS</h2>
-          DE TRABALHO BEM SUCEDIDO NO MERCADO
+            <h2 className="text-4xl text-orange-300 mb-6">ANOS</h2>
+            DE TRABALHO BEM SUCEDIDO NO MERCADO
           </p>
         </div>
       </div>
