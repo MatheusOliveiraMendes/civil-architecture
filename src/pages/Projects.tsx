@@ -2,25 +2,25 @@ function Projects() {
   const projects = [
     {
       id: 1,
-      title: "Residência Moderna",
+      title: "Hangzhou, China",
       description: "Projeto design minimalista.",
       image: "/images/project1.jpg",
     },
     {
       id: 2,
-      title: "Edifício Comercial",
+      title: "Los Angeles, United States",
       description: "Edifício comercial sustentavel.",
       image: "/images/project2.jpg",
     },
     {
       id: 3,
-      title: "Praça Pública",
+      title: "Montreal, Canada",
       description: "Projeto de revitalização.",
       image: "/images/project3.jpg",
     },
     {
       id: 4,
-      title: "Casa de Campo",
+      title: "Reggio Emilia, Italy",
       description: "Projeto de uma casa.",
       image: "/images/project4.jpg",
     },
