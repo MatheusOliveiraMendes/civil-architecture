@@ -3,25 +3,25 @@ function Projects() {
     {
       id: 1,
       title: "Hangzhou, China",
-      description: "Projeto design minimalista.",
+      description: "Gerenciamento de Projetos.",
       image: "/images/project1.jpg",
     },
     {
       id: 2,
       title: "Los Angeles, United States",
-      description: "Edifício comercial sustentavel.",
+      description: "Serviços de arquitetura.",
       image: "/images/project2.jpg",
     },
     {
       id: 3,
       title: "Montreal, Canada",
-      description: "Projeto de revitalização.",
+      description: "Pré-construção.",
       image: "/images/project3.jpg",
     },
     {
       id: 4,
       title: "Reggio Emilia, Italy",
-      description: "Projeto de uma casa.",
+      description: "Engenharia de fachada.",
       image: "/images/project4.jpg",
     },
   ];
@@ -39,9 +39,9 @@ function Projects() {
            <div className="absolute inset-0 flex flex-col justify-between text-center text-white px-4 py-8">
                 <h3 className="text-xl font-bold">{project.title}</h3>
               </div>
-              <p className="absolute bottom-28 rotate-270 text-white text-sm font-semibold">
-                {project.description}
-              </p>              
+              <p className="absolute bottom-4 left-4 text-white text-sm font-semibold">
+  {project.description}
+</p>            
           </div>
         ))}
       </div>
