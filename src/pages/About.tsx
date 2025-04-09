@@ -68,15 +68,15 @@ function About() {
         <div className="relative flex flex-col items-center">
           <div
             ref={numberRef}
-            className="text-[10rem] font-bold text-transparent flex items-center justify-center bg-clip-text bg-cover bg-center"
+            className="text-[15rem] font-bold text-transparent flex items-center justify-center bg-clip-text bg-cover bg-center"
             style={{
               backgroundImage: "url('/images/slide3.jpg')",
             }}
           >
             {years}
           </div>
+          <h2 className="text-4xl text-orange-300 mb-6">ANOS</h2>
           <p className="text-xl font-semibold text-gray-700 mt-4 text-center">
-            <h2 className="text-4xl text-orange-300 mb-6">ANOS</h2>
             DE TRABALHO BEM SUCEDIDO NO MERCADO
           </p>
         </div>
