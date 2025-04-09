@@ -75,8 +75,8 @@ function Slider() {
           {titles[index].button}
         </button>
       </div>
-      <div className="absolute bottom-8 left-8 flex flex-col items-center space-y-4">
-          <p className="text-white p-6 rotate-270 text-sm ">Siga - nos</p>
+      <div className="absolute bottom-8 left-0 flex flex-col items-center space-y-4">
+          <p className="text-white p-8 rotate-270 text-xl ">Siga - nos</p>
            <div className="w-px h-24 bg-white"></div>
         <div className="flex flex-col space-y-4">
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-orange-300 transition">
