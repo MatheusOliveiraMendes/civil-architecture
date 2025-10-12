@@ -1,69 +1,119 @@
-import { FaHammer, FaBuilding, FaDraftingCompass, FaHardHat } from "react-icons/fa";
+import { FaBuilding, FaDraftingCompass, FaHammer, FaHardHat } from "react-icons/fa";
 
 function Services() {
+  const highlights = [
+    {
+      title: "Co-criação estratégica",
+      description:
+        "Workshops de imersão para alinhar expectativas, mapear necessidades e ativar soluções personalizadas.",
+    },
+    {
+      title: "Tecnologia e precisão",
+      description:
+        "Modelagem BIM, maquetes digitais e monitoramento inteligente asseguram entregas com alto padrão.",
+    },
+  ];
+
+  const services = [
+    {
+      icon: <FaHammer size={36} />,
+      title: "Serviços de Construção",
+      text: "Gestão completa de obra com acompanhamento diário, relatórios e controle de qualidade rigoroso.",
+    },
+    {
+      icon: <FaBuilding size={36} />,
+      title: "Gestão de Construção",
+      text: "Planejamento integrado de cronograma, fornecedores e budget para garantir eficiência em cada etapa.",
+    },
+    {
+      icon: <FaDraftingCompass size={36} />,
+      title: "Projeto-Construção",
+      text: "Equipe multidisciplinar atuando de ponta a ponta, da concepção aos detalhes executivos.",
+    },
+    {
+      icon: <FaHardHat size={36} />,
+      title: "Contratação Geral",
+      text: "Rede de parceiros homologados e especialistas para soluções sob medida em projetos de qualquer escala.",
+    },
+  ];
+
   return (
-    <div className="py-24 sm:py-32">
-      <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="text-2xl text-orange-300">NOSSOS SERVIÇOS</h2>
-        <p className="mt-2 max-w-lg text-4xl font-semibold tracking-tight text-balance text-gray-950 sm:text-5xl">
-          Soluções de Construção
-        </p>
-        <div className="mt-10 grid sm:mt-16 lg:grid-cols-2 lg:grid-rows-2">
-          <div className="relative lg:row-span-2">
-            <div className="absolute inset-px bg-white"></div>
-            <div className="relative flex h-full flex-col overflow-hidden">
-              <div className="@container relative min-h-[30rem] w-full grow max-lg:mx-auto max-lg:max-w-sm">
-                <img
-                  className="size-full object-cover object-top"
-                  src="images/services.jpg"
-                  alt=""
-                />
-              </div>
+    <section className="relative overflow-hidden bg-neutral-950 py-24 text-gray-100 sm:py-28">
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-[45vw] bg-gradient-to-l from-orange-300/20 via-orange-200/10 to-transparent blur-3xl" />
+      <div className="mx-auto flex w-full max-w-screen-xl flex-col gap-20 px-6">
+        <div className="grid gap-16 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+          <div className="space-y-8">
+            <span className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.5em] text-orange-200">
+              <span className="h-px w-10 bg-orange-300" />
+              Nossos serviços
+            </span>
+            <h2 className="text-3xl font-semibold leading-tight text-orange-100 sm:text-4xl lg:text-5xl">
+              Soluções completas para construir o futuro dos seus espaços.
+            </h2>
+            <p className="text-lg leading-relaxed text-gray-300">
+              Atuamos da estratégia à execução com processos integrados, transparência e tecnologia. Cada fase do projeto
+              é acompanhada por especialistas dedicados em arquitetura, interiores, engenharia e gestão.
+            </p>
+            <div className="grid gap-6 sm:grid-cols-2">
+              {highlights.map((item) => (
+                <div
+                  key={item.title}
+                  className="border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:border-orange-200/40 hover:bg-orange-200/10"
+                >
+                  <h3 className="text-sm font-semibold uppercase tracking-[0.35em] text-orange-200">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-base text-gray-300">{item.description}</p>
+                </div>
+              ))}
             </div>
-            <div className="pointer-events-none absolute "></div>
           </div>
-          <div className="relative max-lg:row-start-1">
-            <div className="absolute inset-px bg-white "></div>
-            <div className="relative flex h-full flex-col overflow-hidden">
-              <div className="sm:px-10 sm:pt-10">
-                <p className="p-8 max-w-lg text-2xl text-gray-600 max-lg:text-center">
-                  A primeira coisa que fazemos é nos reunir com nossos clientes e conversar sobre seus objetivos em um projeto futuro. Durante esta reunião,
-                  sinta-se à vontade para comunicar suas ideias e fazer muitas perguntas. Este estágio é altamente decisivo,
-                  pois você pode avaliar o trabalho do seu arquiteto em potencial navegando em seu portfólio
-                </p>
+
+          <div className="relative">
+            <div className="absolute -top-10 -left-10 hidden h-28 w-28 border border-orange-200/50 lg:block" />
+            <div className="absolute -bottom-16 -right-12 hidden h-48 w-48 bg-orange-200/20 blur-2xl lg:block" />
+            <div className="relative overflow-hidden border border-white/10 bg-white/10 shadow-2xl shadow-black/40">
+              <img
+                className="h-full w-full object-cover object-center"
+                src="/images/services.jpg"
+                alt="Equipe de arquitetura trabalhando em projeto"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent" />
+              <div className="absolute bottom-0 w-full p-8">
+                <div className="border border-white/10 bg-neutral-950/70 p-6 backdrop-blur">
+                  <p className="text-xs font-semibold uppercase tracking-[0.45em] text-orange-200">
+                    Do conceito à entrega
+                  </p>
+                  <p className="mt-4 text-base text-gray-200">
+                    Cronogramas integrados, orçamentos transparentes e acompanhamento em tempo real para decisões mais
+                    seguras e ágeis.
+                  </p>
+                </div>
               </div>
             </div>
-            <div className="pointer-events-none absolute "></div>
-          </div>
-          <div className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
-            <div className="absolute inset-px bg-orange-300"></div>
-            <div className="relative flex h-full flex-col overflow-hidden ">
-              <div className="sm:px-10 sm:pt-10">
-                <p className="p-8 m-8 max-w-lg text-4xl font-semibold text-gray-950 max-lg:text-center">
-                  Nós nos concentramos no problema, na pergunta e na solução. E nós sempre pensamos no futuro.
-                </p>
-              </div>
-            </div>
-            <div className="pointer-events-none absolute inset-px "></div>
           </div>
         </div>
 
-        <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-2">
-          {[
-            { icon: <FaHammer size={40} />, title: "Serviços de Construção", text: "Nossos clientes adoram o ritmo/tempo de qualidade que mostramos durante cada um dos principais processos de construção! Estamos confortáveis com qualquer ideia de nossos clientes." },
-            { icon: <FaBuilding size={40} />, title: "Gestão de Construção", text: "Nosso gerenciamento de projetos é essencial. Estamos usando os métodos de ciclos de vida mais eficientes em tempo e iterações para concluir todos os projetos a tempo." },
-            { icon: <FaDraftingCompass size={40} />, title: "Projeto-Construção", text: "Se um projeto não for muito complexo, podemos contratar um contratante do tipo designer-construtor, para tornar a longevidade da construção mais curta." },
-            { icon: <FaHardHat size={40} />, title: "Contratação Geral", text: "Temos uma longa lista de empreiteiros profissionais, com quem nossos engenheiros e arquitetos gostam de trabalhar na maioria de nossos projetos de construção!" }
-          ].map((item, index) => (
-            <div key={index} className="group relative flex flex-col items-center bg-white p-8 text-center transition-all duration-300 hover:shadow-[0px_0px_5px_rgba(0,0,0,0.5)]">
-              <div className="text-orange-300 mb-4">{item.icon}</div>
-              <h3 className="text-lg font-semibold text-gray-900">{item.title}</h3>
-              <p className="mt-2 text-gray-600">{item.text}</p>
-            </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {services.map((service) => (
+            <article
+              key={service.title}
+              className="group relative overflow-hidden border border-white/10 bg-neutral-900/60 p-8 shadow-lg shadow-black/20 transition hover:-translate-y-1 hover:border-orange-200/40 hover:bg-neutral-900/80"
+            >
+              <div className="mb-6 inline-flex h-14 w-14 items-center justify-center border border-orange-200/40 bg-orange-200/10 text-orange-200 transition group-hover:border-orange-200 group-hover:bg-orange-200/20">
+                {service.icon}
+              </div>
+              <h3 className="text-xl font-semibold text-orange-100">{service.title}</h3>
+              <p className="mt-4 text-base leading-relaxed text-gray-300">{service.text}</p>
+              <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.3em] text-orange-200 transition group-hover:text-orange-100">
+                Saiba mais
+                <span className="h-px w-10 bg-orange-300" />
+              </span>
+            </article>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -6,17 +6,13 @@ import Contact from "./Contact";
 
 function Home() {
   return (
-  <div>
-   <div className="bg-neutral-900">
+    <main className="flex flex-col">
       <Slider />
-   </div>
-   <div>
-       <About />
+      <About />
       <Services />
       <Projects />
       <Contact />
-   </div>
-   </div>
+    </main>
   );
 }
 
